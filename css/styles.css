@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Padding não somar com a largura do elemento (Deixando eles maiores que o estipulado) */
+  font-family: helvetica;
+}
+
+body {
+  background-color: #202124;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#search-input {
+  width: 400px;
+  padding: 10px;
+  background-color: #525356;
+  color: #ddd;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+}
+
+#search-input::placeholder {
+  color: #ddd;
+}
+
+#search-input:focus {
+  outline: 1px solid #aaa;
+  box-shadow: 0px 0px 6px #aaa;
+}
+
+#export-notes {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 15px;
+  border: 2px solid #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#export-notes:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+#add-note-container {
+  display: flex;
+  margin: 1rem auto 0;
+  width: 400px;
+  gap: 0.8rem;
+}
+
+#add-note-container input,
+#add-note-container button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+#add-note-container input {
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid #525356;
+  color: #fff;
+}
+
+#add-note-container button {
+  background-color: #555;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+#add-note-container button:hover {
+  opacity: 1;
+}
+
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.note {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  min-height: 200px;
+  padding: 1rem;
+  background-color: #202124;
+  color: #fff;
+  position: relative;
+}
+
+.note textarea {
+  background-color: transparent;
+  color: #fff;
+  resize: none; /*Tirar o padrão do textarea*/
+  border: none;
+  outline: none;
+  height: 100%;
+}
+
+.note .bi-pin {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 1.2rem;
+  background-color: #333;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.note .bi-x-lg,
+.note .bi-file-earmark-plus {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1rem;
+  padding: 5px;
+  color: #777;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.note .bi-file-earmark-plus {
+  top: 40px;
+}
+
+.note:hover > i {
+  opacity: 1;
+}
+
+.note .bi-x-lg:hover,
+.note .bi-file-earmark-plus:hover {
+  color: #fff;
+}
+
+.note.fixed {
+  background-color: #3c3c3f;
+}
